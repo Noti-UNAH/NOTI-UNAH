@@ -11290,3 +11290,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.fondo{
+  background-image: url("imgjuan/baner.jpeg"); 
+  background-color: rgb(0,51,153);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
