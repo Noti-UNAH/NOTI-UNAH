@@ -11305,6 +11305,11 @@ textarea.form-control-lg {
   background-position-x: center;
   background-position-y: center;
   background-repeat: no-repeat;
-  border-radius: 10px;
-  
+  border-radius: 10px; 
+}
+
+.imgcard{
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
