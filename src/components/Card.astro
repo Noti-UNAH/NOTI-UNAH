@@ -1,22 +1,21 @@
 ---
 export interface Props {
-	title: string;
-	body: string;
-	src: string;
-	href: string,
-	fecha: string,
+  title: string;
+  body: string;
+  src: string;
+  href: string;
+  fecha: string;
 }
 
 const { href, title, body, src, fecha } = Astro.props;
 ---
 
-
 <div class="card">
-	<img class="img-fluid" alt="100%x280" src={src}>
-	<div class="card-body">
-		<div class="small text-muted">{fecha}</div>
-		<h4 class="card-title">{title}</h4>
-		<p class="card-text">{body}</p>
-		<a href={href} class="btn btn-primary stretched-link">Leer mas →</a>
-	</div>
+  <img class="img-fluid" alt="100%x280" src={src} />
+  <div class="card-body">
+    <div class="small text-muted">{fecha}</div>
+    <h4 class="card-title">{title}</h4>
+    <p class="card-text">{body}</p>
+    <a href={href} class="btn btn-primary stretched-link">Leer mas →</a>
+  </div>
 </div>
