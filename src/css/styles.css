@@ -11298,3 +11298,13 @@ textarea.form-control-lg {
   background-position-x: center;
   background-position-y: center;
 }
+
+.fondocard {
+  background-image: url("/img/solfondo.png");
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  
+}
