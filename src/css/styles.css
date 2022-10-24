@@ -11291,7 +11291,7 @@ textarea.form-control-lg {
   }
 }
 .fondo{
-  background-image: url("imgjuan/baner.jpeg"); 
+  background-image: url("/img/solfondo.png"); 
   background-color: rgb(0,51,153);
   background-repeat: no-repeat;
   background-size: cover;
@@ -11312,4 +11312,8 @@ textarea.form-control-lg {
   display: block;
   max-width: 100%;
   height: auto;
+}
+.tituloH{
+  font-family: "Bungee Shade";
+  font-size: 6rem;
 }
