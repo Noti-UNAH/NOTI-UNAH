@@ -11317,3 +11317,13 @@ textarea.form-control-lg {
   font-family: "Bungee Shade";
   font-size: 6rem;
 }
+
+.imgcardCarousel{
+  width: 400px;
+  height: 200px;
+}
+
+.imgcardGeneral{
+  width: 600px;
+  height: 200px;
+}

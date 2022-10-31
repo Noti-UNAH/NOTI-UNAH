@@ -1,11 +1,14 @@
 ---
-import Card from "./Card.astro";
 import ciudad from "../img/carousel/img_not.jpg";
 import pasantia from "../img/carousel/CNA-Pasantia.jpeg";
 import musculo from "../img/carousel/musculo.jpg";
 import kalos from "../img/carousel/kalos.png";
 import era from "../img/carousel/era.jpg";
 import reu from "../img/carousel/reu.jpeg";
+import CardCarousel from "./CardCarousel.astro";
+
+const response = await fetch("http://localhost:8000/api/noticia");
+const data = await response.json();
 ---
 
 <section class="pt-5 pb-5">
@@ -24,16 +27,16 @@ import reu from "../img/carousel/reu.jpeg";
             <div class="carousel-item active">
               <div class="row">
                 <div class="col-md-4 mb-3">
-                  <Card
-                    src={ciudad}
-                    fecha="Octubre 7, 2022"
-                    href="#"
-                    title="Consultorio Jurídico Gratuito de la UNAH busca fortalecer sus áreas de intervención"
-                    body="La directora del Consultorio jurídico Gratuito (CJG-UNAH), Erlinda Flores, informó que el equipo de trabajo de este ente de la Universidad Nacional Autónoma de Honduras (UNAH) realizó la semana anterior una gira por diferentes municipios del norte del país, con el propósito de monitorear las actividades de vinculación y fortalecer las áreas de intervención."
+                  <CardCarousel
+                    src={data[0].img}
+                    fecha={data[0].fecha}
+                    href="/Cientifico"
+                    title={data[0].title}
+                    body={data[0].descr}
                   />
                 </div>
                 <div class="col-md-4 mb-3">
-                  <Card
+                  <CardCarousel
                     src={pasantia}
                     fecha="Octubre 7, 2022"
                     href="#"
@@ -42,11 +45,11 @@ import reu from "../img/carousel/reu.jpeg";
                   />
                 </div>
                 <div class="col-md-4 mb-3">
-                  <Card
+                  <CardCarousel
                     src={musculo}
                     fecha="Octubre 7, 2022"
                     href="#"
-                    title="Investigador de la UNAH realiza estudio sobre la policistina-1 y su función reguladora de la mitofagia de los cardiomiocitos"
+                    title="Investigador de la UNAH realiza estudio sobre la policistina-1 y su función reguladora de la mitofagia de los CardCarouseliomiocitos"
                     body=""
                   />
                 </div>
@@ -55,7 +58,7 @@ import reu from "../img/carousel/reu.jpeg";
             <div class="carousel-item">
               <div class="row">
                 <div class="col-md-4 mb-3">
-                  <Card
+                  <CardCarousel
                     src={kalos}
                     fecha="Octubre 7, 2022"
                     href="#"
@@ -64,7 +67,7 @@ import reu from "../img/carousel/reu.jpeg";
                   />
                 </div>
                 <div class="col-md-4 mb-3">
-                  <Card
+                  <CardCarousel
                     src={era}
                     fecha="Octubre 7, 2022"
                     href="#"
@@ -73,7 +76,7 @@ import reu from "../img/carousel/reu.jpeg";
                   />
                 </div>
                 <div class="col-md-4 mb-3">
-                  <Card
+                  <CardCarousel
                     src={reu}
                     fecha="Octubre 7, 2022"
                     href="#"
