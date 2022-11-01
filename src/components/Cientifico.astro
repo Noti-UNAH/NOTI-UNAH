@@ -1,0 +1,43 @@
+---
+import CardNote from "./CardNote.astro";
+import Cardsmall from "./Card.astro";
+
+const response = await fetch("https://noti-unah.herokuapp.com/");
+const data = await response.json();
+---
+
+<div class="container p-3">
+  <CardNote />
+  <div class="row">
+    <h3>Noticias relacionadas</h3>
+  </div>
+  <div class="row">
+    <div class="col">
+      <Cardsmall
+        src={data[23].img}
+        fecha={data[23].fecha}
+        href="/posts/24"
+        title={data[23].title}
+        body={data[23].descr}
+      />
+    </div>
+    <div class="col">
+      <Cardsmall
+        src={data[24].img}
+        fecha={data[24].fecha}
+        href="/posts/25"
+        title={data[24].title}
+        body={data[24].descr}
+      />
+    </div>
+    <div class="col">
+      <Cardsmall
+        src={data[25].img}
+        fecha={data[25].fecha}
+        href="/posts/26"
+        title={data[25].title}
+        body={data[25].descr}
+      />
+    </div>
+  </div>
+</div>
