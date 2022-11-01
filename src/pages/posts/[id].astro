@@ -6,7 +6,7 @@ import Footer from "../../components/Footer.astro";
 import Card from "../../components/Card.astro";
 
 export async function getStaticPaths() {
-  const data = await fetch('http://localhost:8000/api/noticia').then(response => response.json())
+  const data = await fetch('https://noti-unah.herokuapp.com/').then(response => response.json())
 
   return data.map( (post) => {
     return {
