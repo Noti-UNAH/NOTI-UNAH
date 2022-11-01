@@ -1,6 +1,9 @@
 ---
 import CardNote from "./CardNote.astro";
 import Cardsmall from "./Card.astro";
+
+const response = await fetch("http://localhost:8000/api/noticia");
+const data = await response.json();
 ---
 
 <div class="container p-3">
@@ -11,38 +14,38 @@ import Cardsmall from "./Card.astro";
   <div class="row">
     <div class="col">
       <Cardsmall
-        src="https://blogs.unah.edu.hn/assets/unahvs/blog/6080/_resampled/CroppedFocusedImageWzc1MCw0NTAsInkiLDU2XQ/1.jpg"
-        fecha="Octubre 7, 2022"
-        href="#"
-        title="Participacion de proyectos"
-        body="Durante 2021, la Universidad Nacional Autónoma de Honduras en el Valle de Sula (UNAH-VS) ha tomado iniciativa en varios proyectos para el bienestar de la comunidad universitaria y población hondureña en general, logrando que este año pase a la historia a pesar de la pandemia por el COVID-19."
+        src={data[10].img}
+        fecha={data[10].fecha}
+        href="/posts/11"
+        title={data[10].title}
+        body={data[10].descr}
       />
     </div>
     <div class="col">
       <Cardsmall
-        src="https://presencia.unah.edu.hn/assets/Uploads/DIEGO__FillWzg0MCw1NTBd.jpeg"
-        fecha="Octubre 7, 2022"
-        href="#"
-        title="Excelencia academica"
-        body="Durante 2021, la Universidad Nacional Autónoma de Honduras en el Valle de Sula (UNAH-VS) ha tomado iniciativa en varios proyectos para el bienestar de la comunidad universitaria y población hondureña en general, logrando que este año pase a la historia a pesar de la pandemia por el COVID-19."
+        src={data[11].img}
+        fecha={data[11].fecha}
+        href="/posts/12"
+        title={data[11].title}
+        body={data[11].descr}
       />
     </div>
     <div class="col">
       <Cardsmall
-        src="https://blogs.unah.edu.hn/assets/unahvs/blog/_resampled/CroppedFocusedImageWzc1MCw0NTAsInkiLDI1XQ/IMG-7596.JPG"
-        fecha="Octubre 7, 2022"
-        href="#"
-        title="Catedraticos Universitarios"
-        body="Durante 2021, la Universidad Nacional Autónoma de Honduras en el Valle de Sula (UNAH-VS) ha tomado iniciativa en varios proyectos para el bienestar de la comunidad universitaria y población hondureña en general, logrando que este año pase a la historia a pesar de la pandemia por el COVID-19."
+        src={data[12].img}
+        fecha={data[12].fecha}
+        href="/posts/13"
+        title={data[12].title}
+        body={data[12].descr}
       />
     </div>
     <div class="col">
       <Cardsmall
-        src="https://presencia.unah.edu.hn/assets/Uploads/DIEGO__FillWzg0MCw1NTBd.jpeg"
-        fecha="Octubre 7, 2022"
-        href="#"
-        title="Excelencia academica"
-        body="Durante 2021, la Universidad Nacional Autónoma de Honduras en el Valle de Sula (UNAH-VS) ha tomado iniciativa en varios proyectos para el bienestar de la comunidad universitaria y población hondureña en general, logrando que este año pase a la historia a pesar de la pandemia por el COVID-19."
+        src={data[13].img}
+        fecha={data[13].fecha}
+        href="/posts/14"
+        title={data[13].title}
+        body={data[13].descr}
       />
     </div>
   </div>

@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Card from "../../components/Card.astro";
+
+export async function getStaticPaths() {
+  const data = await fetch('http://localhost:8000/api/noticia').then(response => response.json())
+
+  return data.map( (post) => {
+    return {
+      params: { id: post.id.toString() },
+      props: { post }
+    }
+  })
+}
+
+const { post } = Astro.props
+---
+
+
+<Layout title="Noticia">
+    <Header />
+    <Navbar />
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <h1>{post.title}</h1>
+          <div class="card">
+            <img class="img-fluid" src={post.img}  />
+            <div class="card-body">
+            <h5><div class="small text-muted">{post.fecha}</div></h5>
+          </div>
+          </div>
+          <p>{post.cuerpo}</p>
+        </div>
+      </div>
+    </div>
+    <Footer />
+</Layout>
+  

@@ -1,6 +1,9 @@
 ---
 import Card from "./Card.astro";
 import Cardwidgets from "./Cardwidgets.astro";
+
+const response = await fetch("http://localhost:8000/api/noticia");
+const data = await response.json();
 ---
 
 <section class="p-3">
@@ -9,13 +12,13 @@ import Cardwidgets from "./Cardwidgets.astro";
       <!-- Blog entries-->
       <div class="col-lg-7">
         <!-- Featured blog post-->
-        <div class="mb-4">
+        <div class="mb-5">
           <Card
-            src="https://presencia.unah.edu.hn/assets/Uploads/FUBag1VWIAAsAq7.jpg"
-            fecha="Octubre 7, 2022"
-            href="#"
-            title="Representantes de la FEUH visitan la Universidad de El Salvador"
-            body=""
+            src={data[3].img}
+            fecha={data[3].fecha}
+            href="/posts/4"
+            title={data[3].title}
+            body={data[3].descr}
           />
         </div>
         <!-- Nested row for non-featured blog posts-->
@@ -24,21 +27,21 @@ import Cardwidgets from "./Cardwidgets.astro";
             <!-- Blog post-->
             <div class="mb-4">
               <Card
-                src="https://presencia.unah.edu.hn/assets/Uploads/processed-0e953a64-9292-439d-95d2-989c065df2fa_VDbFUQId.jpeg"
-                fecha="Octubre 7, 2022"
-                href="#"
-                title="Calendario Universitario"
-                body="With supporting text below as a natural lead-in to additional content."
+                src={data[4].img}
+                fecha={data[4].fecha}
+                href="/posts/5"
+                title={data[4].title}
+                body={data[4].descr}
               />
             </div>
             <!-- Blog post-->
             <div class="mb-4">
               <Card
-                src="https://presencia.unah.edu.hn/assets/Uploads/patitas-portada.jpg"
-                fecha="Octubre 7, 2022"
-                href="#"
-                title="Patitas UNAH lleva alimentos y medicina a gatos y perros en situación de albergue"
-                body="El grupo de rescate animal Patitas UNAH se hizo presente en los albergues de la Escuela Agustín Alonso e Instituto San Pablo con el fin de atender a la comunidad canina y felina"
+                src={data[5].img}
+                fecha={data[5].fecha}
+                href="/posts/6"
+                title={data[5].title}
+                body={data[5].descr}
               />
             </div>
           </div>
@@ -46,21 +49,21 @@ import Cardwidgets from "./Cardwidgets.astro";
             <!-- Blog post-->
             <div class="mb-4">
               <Card
-                src="https://presencia.unah.edu.hn/assets/Uploads/Sistema-de-Admision-1-v3.jpg"
-                fecha="Octubre 7, 2022"
-                href="#"
-                title="Aplicacion de PAA"
-                body="With supporting text below as a natural lead-in to additional content."
+              src={data[6].img}
+              fecha={data[6].fecha}
+              href="/posts/7"
+              title={data[6].title}
+              body={data[6].descr}
               />
             </div>
             <!-- Blog post-->
             <div class="mb-4">
               <Card
-                src="https://presencia.unah.edu.hn/assets/Uploads/psicologia-conductual.jpg"
-                fecha="Octubre 7, 2022"
-                href="#"
-                title="Experta en psicología conductual entrena a docentes de la UNAH"
-                body="En conmemoración del Día del Maestro, la Dirección de Docencia de la Universidad Nacional Autónoma de Honduras (UNAH) realizó este jueves 29 de septiembre la conferencia virtual Regulación emocional en los espacios de aprendizaje"
+                src={data[7].img}
+                fecha={data[7].fecha}
+                href="/posts/8"
+                title={data[7].title}
+                body={data[7].descr}
               />
             </div>
           </div>
@@ -70,7 +73,7 @@ import Cardwidgets from "./Cardwidgets.astro";
       <div class="col-lg-5">
         <!-- Search widget-->
         <div class="mb-4">
-          <Cardwidgets header="Buscar">
+          <!-- <Cardwidgets header="Buscar">
             <div class="input-group">
               <input
                 class="form-control"
@@ -83,7 +86,7 @@ import Cardwidgets from "./Cardwidgets.astro";
                 >Ir</button
               >
             </div>
-          </Cardwidgets>
+          </Cardwidgets> -->
         </div>
         <!-- Categories widget-->
         <div class="mb-4">
@@ -109,20 +112,20 @@ import Cardwidgets from "./Cardwidgets.astro";
         <!-- Side widget-->
         <div class="mb-4">
           <Card
-            src="https://presencia.unah.edu.hn/assets/Uploads/juntaaaaportada.jpg"
-            fecha="Octubre 7, 2022"
-            href="#"
-            title="De manera oficial, la UNAH será sede de la Junta Nominadora"
-            body="La Junta Nominadora, responsable de la proposición de candidatos a magistrados de la Corte Suprema de Justicia (CSJ), en reunión con el rector Francisco J. Herrera Alvarado"
+            src={data[8].img}
+            fecha={data[8].fecha}
+            href="/posts/9"
+            title={data[8].title}
+            body={data[8].descr}
           />
         </div>
         <div class="mb-4">
           <Card
-            src="https://presencia.unah.edu.hn/assets/Uploads/ciudad-blanca.jpeg"
-            fecha="Octubre 7, 2022"
-            href="#"
-            title="Película hondureña participa en Festival de Cine Italiano"
-            body="Ciudad Blanca, del cineasta de origen miskito John Wood, es el 'short film' que representa a Honduras en RAM Film Festival Italia."
+          src={data[9].img}
+          fecha={data[9].fecha}
+          href="/posts/10"
+          title={data[9].title}
+          body={data[9].descr}
           />
         </div>
       </div>

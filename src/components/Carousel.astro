@@ -1,5 +1,4 @@
 ---
-import ciudad from "../img/carousel/img_not.jpg";
 import pasantia from "../img/carousel/CNA-Pasantia.jpeg";
 import musculo from "../img/carousel/musculo.jpg";
 import kalos from "../img/carousel/kalos.png";
@@ -18,93 +17,34 @@ const data = await response.json();
         <h3 class="mb-3">Noticias del dia</h3>
       </div>
       <div class="col-12">
-        <div
-          id="carouselExampleIndicators"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col-md-4 mb-3">
-                  <CardCarousel
-                    src={data[0].img}
-                    fecha={data[0].fecha}
-                    href="/Cientifico"
-                    title={data[0].title}
-                    body={data[0].descr}
-                  />
-                </div>
-                <div class="col-md-4 mb-3">
-                  <CardCarousel
-                    src={pasantia}
-                    fecha="Octubre 7, 2022"
-                    href="#"
-                    title="Abierta convocatoria para pasantías y certificación de jóvenes anticorrupción"
-                    body="La Facultad de Ciencias Jurídicas (FCJ), de la Universidad Nacional Nacional Autónoma de Honduras (UNAH), y el Consejo Nacional Anticorrupción (CNA)..."
-                  />
-                </div>
-                <div class="col-md-4 mb-3">
-                  <CardCarousel
-                    src={musculo}
-                    fecha="Octubre 7, 2022"
-                    href="#"
-                    title="Investigador de la UNAH realiza estudio sobre la policistina-1 y su función reguladora de la mitofagia de los CardCarouseliomiocitos"
-                    body=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-4 mb-3">
-                  <CardCarousel
-                    src={kalos}
-                    fecha="Octubre 7, 2022"
-                    href="#"
-                    title="Iberoamérica cuenta con sello KVI de aseguramiento de la calidad educativa superior a distancia y virtual"
-                    body="Para optar a estos servicios, las instituciones deben estar acreditadas y al menos brindar el 51% de sus asignaturas de forma virtual o a distancia."
-                  />
-                </div>
-                <div class="col-md-4 mb-3">
-                  <CardCarousel
-                    src={era}
-                    fecha="Octubre 7, 2022"
-                    href="#"
-                    title="En III Encuentro Nacional de Educación Superior a Distancia y Virtual exponen sobre la educación en la era digital"
-                    body="En el marco del III Encuentro Nacional de Educación Superior a Distancia y Virtual se realizó la conferencia Educación en la Era Digital, brindada por Francisco Cervantes."
-                  />
-                </div>
-                <div class="col-md-4 mb-3">
-                  <CardCarousel
-                    src={reu}
-                    fecha="Octubre 7, 2022"
-                    href="#"
-                    title="Universidades discutieron sobre el avance de la educación virtual en el país"
-                    body="En el marco del III Encuentro Nacional de Educación Superior a Distancia y Virtual “Realidades y tendencias en la Educación Superior a Distancia: hacia un modelo híbrido, innovador e inclusivo”, se desarrolló el panel Realidades y desafíos de la educación superior a distancia virtual en Honduras: una oportunidad para ampliar acceso a la educación superior y reducir desigualdade"
-                  />
-                </div>
-              </div>
-            </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <CardCarousel
+              src={data[0].img}
+              fecha={data[0].fecha}
+              href="/posts/1"
+              title={data[0].title}
+              body={data[0].descr}
+            />
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <div class="col-md-4 mb-3">
+            <CardCarousel
+              src={data[1].img}
+              fecha={data[1].fecha}
+              href="/posts/2"
+              title={data[1].title}
+              body={data[1].descr}
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <CardCarousel
+              src={data[2].img}
+              fecha={data[2].fecha}
+              href="/posts/3"
+              title={data[2].title}
+              body={data[2].descr}
+            />
+          </div>
         </div>
       </div>
     </div>
