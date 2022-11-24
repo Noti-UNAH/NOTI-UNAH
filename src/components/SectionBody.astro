@@ -1,134 +1,182 @@
 ---
-import Card from "./Card.astro";
-import Cardwidgets from "./Cardwidgets.astro";
-
-const response = await fetch("https://noti-unah.herokuapp.com/");
+const response = await fetch("http://127.0.0.1:8000/");
 const data = await response.json();
 ---
 
-<section class="p-3">
+<section class="section-sm">
   <div class="container">
-    <div class="row">
-      <!-- Blog entries-->
-      <div class="col-lg-7">
-        <!-- Featured blog post-->
-        <div class="mb-5">
-          <Card
-            src={data[3].img}
-            fecha={data[3].fecha}
-            href="/posts/4"
-            title={data[3].title}
-            body=""
-          />
-        </div>
-        <!-- Nested row for non-featured blog posts-->
-        <div class="row">
-          <div class="col-lg-6">
-            <!-- Blog post-->
-            <div class="mb-4">
-              <Card
-                src={data[4].img}
-                fecha={data[4].fecha}
-                href="/posts/5"
-                title={data[4].title}
-                body={data[4].descr}
-              />
-            </div>
-            <!-- Blog post-->
-            <div class="mb-4">
-              <Card
-                src={data[5].img}
-                fecha={data[5].fecha}
-                href="/posts/6"
-                title={data[5].title}
-                body={data[5].descr}
-              />
-            </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        <h2 class="h5 section-title">Noticias recientes</h2>
+        <article class="card mb-4">
+          <div class="post-slider">
+            <img src={data[3].img} class="card-img-top" alt="post-thumb" />
           </div>
-          <div class="col-lg-6">
-            <!-- Blog post-->
-            <div class="mb-4">
-              <Card
-              src={data[6].img}
-              fecha={data[6].fecha}
-              href="/posts/7"
-              title={data[6].title}
-              body={data[6].descr}
-              />
-            </div>
-            <!-- Blog post-->
-            <div class="mb-4">
-              <Card
-                src={data[7].img}
-                fecha={data[7].fecha}
-                href="/posts/8"
-                title={data[7].title}
-                body={data[7].descr}
-              />
-            </div>
+          <div class="card-body">
+            <h3 class="mb-3">
+              <a class="post-title" href="/posts/4">{data[3].title}</a>
+            </h3>
+            <ul class="card-meta list-inline">
+              <li class="list-inline-item">
+                <i class="ti-calendar"></i>{data[3].fecha}
+              </li>
+            </ul>
+            <p>{data[3].descr}</p>
+            <a href="/posts/4" class="btn btn-outline-primary">Leer mas →</a>
           </div>
-        </div>
+        </article>
+
+        <article class="card mb-4">
+          <div class="post-slider">
+            <img src={data[4].img} class="card-img-top" alt="post-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="mb-3">
+              <a class="post-title" href="/posts/5">{data[4].title}</a>
+            </h3>
+            <ul class="card-meta list-inline">
+              <li class="list-inline-item">
+                <i class="ti-calendar"></i>{data[4].fecha}
+              </li>
+            </ul>
+            <p>{data[4].descr}</p>
+            <a href="/posts/5" class="btn btn-outline-primary">Leer mas →</a>
+          </div>
+        </article>
+
+        <article class="card mb-4">
+          <div class="post-slider">
+            <img src={data[5].img} class="card-img-top" alt="post-thumb" />
+          </div>
+
+          <div class="card-body">
+            <h3 class="mb-3">
+              <a class="post-title" href="/posts/6">{data[5].title}</a>
+            </h3>
+            <ul class="card-meta list-inline">
+              <li class="list-inline-item">
+                <i class="ti-calendar"></i>{data[5].fecha}
+              </li>
+            </ul>
+            <p>{data[5].descr}</p>
+            <a href="/posts/6" class="btn btn-outline-primary">Leer mas →</a>
+          </div>
+        </article>
       </div>
-      <!-- Side widgets-->
-      <div class="col-lg-5">
-        <!-- Search widget-->
-        <div class="mb-4">
-          <!-- <Cardwidgets header="Buscar">
-            <div class="input-group">
-              <input
-                class="form-control"
-                type="text"
-                placeholder="Buscar..."
-                aria-label="Buscar..."
-                aria-describedby="button-search"
-              />
-              <button class="btn btn-primary" id="button-search" type="button"
-                >Ir</button
-              >
-            </div>
-          </Cardwidgets> -->
+      <aside class="col-lg-4 sidebar-home">
+       
+        <!-- categories -->
+        <div class="widget widget-categories">
+          <h4 class="widget-title"><span>Categorias</span></h4>
+          <ul class="list-unstyled widget-list">
+            <!-- <li>
+              <a href="/Fechas" class="d-flex"
+                >Fechas Academicas <small class="ml-auto"></small>
+              </a>
+            </li> -->
+            <li>
+              <a href="/Academico" class="d-flex"
+                >Academico <small class="ml-auto"></small>
+              </a>
+            </li>
+            <li>
+              <a href="/Cientifico" class="d-flex"
+                >Cientifico <small class="ml-auto"></small>
+              </a>
+            </li>
+            <li>
+              <a href="/Deportes" class="d-flex"
+                >Deportes <small class="ml-auto"></small>
+              </a>
+            </li>
+            <li>
+              <a href="/Cultural" class="d-flex"
+                >Cultural <small class="ml-auto"></small>
+              </a>
+            </li>
+            <li>
+              <a href="/Social" class="d-flex"
+                >Social <small class="ml-auto"></small>
+              </a>
+            </li>
+          </ul>
         </div>
-        <!-- Categories widget-->
-        <div class="mb-4">
-          <Cardwidgets header="Categorias">
-            <div class="row">
-              <div class="col-sm-6">
-                <ul class="list-unstyled mb-0">
-                  <li><a style="color:rgb(255,204,0);" href="Fechas">Fechas Academicas</a></li>
-                  <li><a style="color:rgb(255,204,0);" href="Academico">Academico</a></li>
-                  <li><a style="color:rgb(255,204,0);" href="Cientifico">Cientifico</a></li>
+        <!-- recent post -->
+        <div class="widget">
+          <h4 class="widget-title">Lo mas nuevo</h4>
+
+          <!-- post-item -->
+          <article class="widget-card">
+            <div class="d-flex">
+              <img class="card-img-sm" src={data[6].img} />
+              <div class="ml-3">
+                <h5>
+                  <a class="post-title" href="/posts/7"
+                    >{data[6].title}</a>
+                </h5>
+                <ul class="card-meta list-inline mb-0">
+                  <li class="list-inline-item mb-0">
+                    <i class="ti-calendar"></i>{data[6].fecha}
+                  </li>
                 </ul>
               </div>
-              <div class="col-sm-6">
-                <ul class="list-unstyled mb-0">
-                  <li><a style="color:rgb(255,204,0);" href="Deportes">Deportes</a></li>
-                  <li><a style="color:rgb(255,204,0);" href="Cultural">Cultural</a></li>
-                  <li><a style="color:rgb(255,204,0);" href="Social">Social</a></li>
+            </div>
+          </article>
+
+          <article class="widget-card">
+            <div class="d-flex">
+              <img class="card-img-sm" src={data[7].img} />
+              <div class="ml-3">
+                <h5>
+                  <a class="post-title" href="/posts/8"
+                    >{data[7].title}</a>
+                </h5>
+                <ul class="card-meta list-inline mb-0">
+                  <li class="list-inline-item mb-0">
+                    <i class="ti-calendar"></i>{data[7].fecha}
+                  </li>
                 </ul>
               </div>
             </div>
-          </Cardwidgets>
+          </article>
+
+          <article class="widget-card">
+            <div class="d-flex">
+              <img class="card-img-sm" src={data[13].img} />
+              <div class="ml-3">
+                <h5>
+                  <a class="post-title" href="/posts/14"
+                    >{data[13].title}</a>
+                </h5>
+                <ul class="card-meta list-inline mb-0">
+                  <li class="list-inline-item mb-0">
+                    <i class="ti-calendar"></i>{data[13].fecha}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
         </div>
-        <!-- Side widget-->
-        <div class="mb-4">
-          <Card
-            src={data[8].img}
-            fecha={data[8].fecha}
-            href="/posts/9"
-            title={data[8].title}
-            body={data[8].descr}
-          />
+
+        <!-- Social -->
+        <div class="widget">
+          <h4 class="widget-title"><span>Redes Sociales</span></h4>
+          <ul class="list-inline widget-social">
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/unahvalledesula"><i class="ti-facebook"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://twitter.com/UNAHoficial?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="ti-twitter-alt"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.instagram.com/unahvs_oficial/"><i class="ti-instagram"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/c/UNAHOficial/videos"><i class="ti-youtube"></i></a>
+            </li>
+          </ul>
         </div>
-        <div class="mb-4">
-          <Card
-          src={data[9].img}
-          fecha={data[9].fecha}
-          href="/posts/10"
-          title={data[9].title}
-          body={data[9].descr}
-          />
-        </div>
-      </div>
+      </aside>
     </div>
   </div>
 </section>

@@ -1,14 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import Navbar from '../components/Navbar.astro';
+import BannerExtra from '../components/BannerExtra.astro';
 import Footer from '../components/Footer.astro';
-import Deporte from '../components/Deporte.astro';
+import SectionDeportes from '../components/SectionDeportes.astro';
+
 ---
 
-<Layout title="NOTI-UNAH">
+<Layout title="Deportes">
 	<Header/>
-	<Navbar/>
-	<Deporte />
+	<BannerExtra title="Deportes" descripcion="Todas las noticias del ambito deportivo"/>
+	<SectionDeportes/>
 	<Footer/>
 </Layout>

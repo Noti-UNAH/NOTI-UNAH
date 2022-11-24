@@ -1,0 +1,52 @@
+<section class="content">
+  <table class="table" id="noticias">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Fecha</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<script is:inline>
+  fetch("http://127.0.0.1:8000/", {
+    method: "GET",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      Accept: "application/json",
+      "Content-Type": "Application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      let tabla = document.getElementById("noticias").querySelector("tbody");
+      if (data.length !== 0) {
+        for (let i = 0; i < data.length; i++) {
+          let fila = `<tr>
+                          <td>${data[i].id}</td>
+                          <td>${data[i].title}</td>
+                          <td>${data[i].fecha}</td>
+                      </tr>`;
+          let btn = document.createElement("tr");
+          btn.innerHTML = fila;
+          if (i == 0) {
+            tabla.innerHTML = fila;
+          } else {
+            tabla.appendChild(btn);
+          }
+        }
+      } else {
+        tabla.innerHTML = `
+                        <td colspan="3">
+                            <div class="alert alert-danger text-center" role="alert">
+                                <h3 class="text-white">NO HAY DATOS</h3>
+                            </div>
+                        </td>
+                    `;
+      }
+    });
+</script>
