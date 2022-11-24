@@ -1,0 +1,41 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+---
+
+<section class="content">
+  <form id="cambioNuevo">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <h3>Nuevo</h3>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="titulo">Noticia</label>
+                <select
+                  class="form-control"
+                  aria-label=".form-select"
+                  name="editTitulo"
+                  id="editTitulo"
+                  style="width:100%; "
+                  required
+                >
+                  <option selected="true" disabled="disabled" value=""
+                    >Seleccione una noticia</option
+                  >
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-success"
+              ><i class="fa-solid fa-arrow-right-arrow-left"></i> cambiar noticia</button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
