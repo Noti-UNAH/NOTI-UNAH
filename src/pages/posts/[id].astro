@@ -4,7 +4,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
-  const data = await fetch("https://api-noticias.onrender.com").then(
+  const data = await fetch("http://127.0.0.1:8000/").then(
     (response) => response.json()
   );
 

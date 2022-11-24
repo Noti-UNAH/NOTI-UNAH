@@ -59,7 +59,7 @@ document.getElementById("nuevaNoticia").addEventListener("submit", (e) => {
     img: document.getElementById("img").value,
   };
 
-  fetch("https://api-noticias.onrender.com", {
+  fetch("http://127.0.0.1:8000/", {
             method: "POST",
             body: JSON.stringify(nuevaNoticia),
             headers: {

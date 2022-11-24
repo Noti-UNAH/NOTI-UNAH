@@ -8,5 +8,3 @@ $(document).ready(function () {
     $('.side-bar').css('height', height - navbar_top)
     $('.side-bar').css('height', height + 20)
 });
-
-

@@ -20,7 +20,7 @@ import Modal from "./Modal.astro";
   function cerrar() {
     $("#editNoticiaModal").modal("hide");
   }
-  fetch("https://api-noticias.onrender.com", {
+  fetch("http://127.0.0.1:8000/", {
     method: "GET",
     headers: {
       "Access-Control-Allow-Origin": "*",
@@ -57,7 +57,7 @@ import Modal from "./Modal.astro";
       }
     });
   let editNoticia = (id) => {
-    fetch("https://api-noticias.onrender.com/" + id, {
+    fetch("http://127.0.0.1:8000/" + id, {
       method: "GET",
       headers: {
         "Access-Control-Allow-Origin": "*",
@@ -85,7 +85,7 @@ import Modal from "./Modal.astro";
         fecha : document.getElementById("editFecha").value,
       };
       console.log(editNoticias);
-      fetch("https://api-noticias.onrender.com/"+id, {
+      fetch("http://127.0.0.1:8000/"+id, {
           method: "PUT",
           body: JSON.stringify(editNoticias),
           headers: {

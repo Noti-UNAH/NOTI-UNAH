@@ -12,7 +12,7 @@
 </section>
 
 <script is:inline>
-    fetch("https://api-noticias.onrender.com", {
+    fetch("http://127.0.0.1:8000/", {
         method: "GET",
         headers: {
             "Access-Control-Allow-Origin": "*",
@@ -52,7 +52,7 @@
         });
 
     let delNoticia = (id) => {
-        fetch("https://api-noticias.onrender.com/" + id, {
+        fetch("http://127.0.0.1:8000/" + id, {
             method: "DELETE",
             headers: {
                 "Access-Control-Allow-Origin": "*",
