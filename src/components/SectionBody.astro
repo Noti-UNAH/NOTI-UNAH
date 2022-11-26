@@ -10,45 +10,8 @@ const data = await response.json();
         <h2 class="h5 section-title">Noticias recientes</h2>
         <article class="card mb-4">
           <div class="post-slider">
-            <img src={data[3].img} class="card-img-top" alt="post-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="mb-3">
-              <a class="post-title" href="/posts/4">{data[3].title}</a>
-            </h3>
-            <ul class="card-meta list-inline">
-              <li class="list-inline-item">
-                <i class="ti-calendar"></i>{data[3].fecha}
-              </li>
-            </ul>
-            <p>{data[3].descr}</p>
-            <a href="/posts/4" class="btn btn-outline-primary">Leer mas →</a>
-          </div>
-        </article>
-
-        <article class="card mb-4">
-          <div class="post-slider">
-            <img src={data[4].img} class="card-img-top" alt="post-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="mb-3">
-              <a class="post-title" href="/posts/5">{data[4].title}</a>
-            </h3>
-            <ul class="card-meta list-inline">
-              <li class="list-inline-item">
-                <i class="ti-calendar"></i>{data[4].fecha}
-              </li>
-            </ul>
-            <p>{data[4].descr}</p>
-            <a href="/posts/5" class="btn btn-outline-primary">Leer mas →</a>
-          </div>
-        </article>
-
-        <article class="card mb-4">
-          <div class="post-slider">
             <img src={data[5].img} class="card-img-top" alt="post-thumb" />
           </div>
-
           <div class="card-body">
             <h3 class="mb-3">
               <a class="post-title" href="/posts/6">{data[5].title}</a>
@@ -59,7 +22,44 @@ const data = await response.json();
               </li>
             </ul>
             <p>{data[5].descr}</p>
-            <a href="/posts/6" class="btn btn-outline-primary">Leer mas →</a>
+            <a href="/posts/4" class="btn btn-outline-primary">Leer mas →</a>
+          </div>
+        </article>
+
+        <article class="card mb-4">
+          <div class="post-slider">
+            <img src={data[6].img} class="card-img-top" alt="post-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="mb-3">
+              <a class="post-title" href="/posts/7">{data[6].title}</a>
+            </h3>
+            <ul class="card-meta list-inline">
+              <li class="list-inline-item">
+                <i class="ti-calendar"></i>{data[6].fecha}
+              </li>
+            </ul>
+            <p>{data[6].descr}</p>
+            <a href="/posts/7" class="btn btn-outline-primary">Leer mas →</a>
+          </div>
+        </article>
+
+        <article class="card mb-4">
+          <div class="post-slider">
+            <img src={data[7].img} class="card-img-top" alt="post-thumb" />
+          </div>
+
+          <div class="card-body">
+            <h3 class="mb-3">
+              <a class="post-title" href="/posts/8">{data[7].title}</a>
+            </h3>
+            <ul class="card-meta list-inline">
+              <li class="list-inline-item">
+                <i class="ti-calendar"></i>{data[7].fecha}
+              </li>
+            </ul>
+            <p>{data[7].descr}</p>
+            <a href="/posts/8" class="btn btn-outline-primary">Leer mas →</a>
           </div>
         </article>
       </div>
@@ -108,15 +108,15 @@ const data = await response.json();
           <!-- post-item -->
           <article class="widget-card">
             <div class="d-flex">
-              <img class="card-img-sm" src={data[6].img} />
+              <img class="card-img-sm" src={data[8].img} />
               <div class="ml-3">
                 <h5>
-                  <a class="post-title" href="/posts/7"
-                    >{data[6].title}</a>
+                  <a class="post-title" href="/posts/9"
+                    >{data[8].title}</a>
                 </h5>
                 <ul class="card-meta list-inline mb-0">
                   <li class="list-inline-item mb-0">
-                    <i class="ti-calendar"></i>{data[6].fecha}
+                    <i class="ti-calendar"></i>{data[8].fecha}
                   </li>
                 </ul>
               </div>
@@ -125,15 +125,15 @@ const data = await response.json();
 
           <article class="widget-card">
             <div class="d-flex">
-              <img class="card-img-sm" src={data[7].img} />
+              <img class="card-img-sm" src={data[9].img} />
               <div class="ml-3">
                 <h5>
-                  <a class="post-title" href="/posts/8"
-                    >{data[7].title}</a>
+                  <a class="post-title" href="/posts/10"
+                    >{data[9].title}</a>
                 </h5>
                 <ul class="card-meta list-inline mb-0">
                   <li class="list-inline-item mb-0">
-                    <i class="ti-calendar"></i>{data[7].fecha}
+                    <i class="ti-calendar"></i>{data[9].fecha}
                   </li>
                 </ul>
               </div>
@@ -142,15 +142,15 @@ const data = await response.json();
 
           <article class="widget-card">
             <div class="d-flex">
-              <img class="card-img-sm" src={data[13].img} />
+              <img class="card-img-sm" src={data[10].img} />
               <div class="ml-3">
                 <h5>
-                  <a class="post-title" href="/posts/14"
-                    >{data[13].title}</a>
+                  <a class="post-title" href="/posts/11"
+                    >{data[10].title}</a>
                 </h5>
                 <ul class="card-meta list-inline mb-0">
                   <li class="list-inline-item mb-0">
-                    <i class="ti-calendar"></i>{data[13].fecha}
+                    <i class="ti-calendar"></i>{data[10].fecha}
                   </li>
                 </ul>
               </div>

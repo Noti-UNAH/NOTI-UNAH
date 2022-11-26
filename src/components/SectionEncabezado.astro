@@ -1,0 +1,58 @@
+---
+import FormNuevo from "./FormNuevo.astro";
+import FormTendencia from "./FormTendencia.astro";
+import FormPopular from "./FormPopular.astro";
+---
+
+<section class="d-flex justify-content-between">
+  <div class="row content">
+    <div class="col-12">
+      <FormNuevo />
+    </div>
+    <div class="col-12 mt-4">
+      <FormTendencia />
+    </div>
+    <div class="col-12 mt-4">
+      <FormPopular />
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  let nuevoID = document.getElementById("nuevoID");
+  fetch("http://127.0.0.1:8000/", {
+    method: "GET",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      Accept: "application/json",
+      "Content-Type": "Application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      let option = document.createElement("option");
+      option.value = data[0].id;
+      option.text = data[0].title;
+      nuevoID.appendChild(option);
+    });
+  document.getElementById("editNuevo").addEventListener("submit", (e) => {
+    e.preventDefault();
+    let editNoticias = {
+      title: document.getElementById("editTituloNuevo").value,
+      descr: document.getElementById("editDescripcionNueva").value,
+      cuerpo: document.getElementById("editNoticiaNueva").value,
+      img: document.getElementById("editImgNueva").value,
+      fecha: document.getElementById("editFechaNueva").value,
+    };
+    console.log(editNoticias);
+    fetch("http://127.0.0.1:8000/" + nuevoID.value, {
+      method: "PUT",
+      body: JSON.stringify(editNoticias),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+    document.getElementById("editNuevo").reset();
+    location.reload();
+  });
+</script>
