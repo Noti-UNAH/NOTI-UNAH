@@ -1,0 +1,182 @@
+---
+const response = await fetch("http://127.0.0.1:8000/");
+const data = await response.json();
+---
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        <h2 class="h5 section-title">Noticias recientes</h2>
+        <article class="card mb-4">
+          <div class="post-slider">
+            <img src={data[5].img} class="card-img-top" alt="post-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="mb-3">
+              <a class="post-title" href="/posts/6">{data[5].title}</a>
+            </h3>
+            <ul class="card-meta list-inline">
+              <li class="list-inline-item">
+                <i class="ti-calendar"></i>{data[5].fecha}
+              </li>
+            </ul>
+            <p>{data[5].descr}</p>
+            <a href="/posts/4" class="btn btn-outline-primary">Leer mas →</a>
+          </div>
+        </article>
+
+        <article class="card mb-4">
+          <div class="post-slider">
+            <img src={data[6].img} class="card-img-top" alt="post-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="mb-3">
+              <a class="post-title" href="/posts/7">{data[6].title}</a>
+            </h3>
+            <ul class="card-meta list-inline">
+              <li class="list-inline-item">
+                <i class="ti-calendar"></i>{data[6].fecha}
+              </li>
+            </ul>
+            <p>{data[6].descr}</p>
+            <a href="/posts/7" class="btn btn-outline-primary">Leer mas →</a>
+          </div>
+        </article>
+
+        <article class="card mb-4">
+          <div class="post-slider">
+            <img src={data[7].img} class="card-img-top" alt="post-thumb" />
+          </div>
+
+          <div class="card-body">
+            <h3 class="mb-3">
+              <a class="post-title" href="/posts/8">{data[7].title}</a>
+            </h3>
+            <ul class="card-meta list-inline">
+              <li class="list-inline-item">
+                <i class="ti-calendar"></i>{data[7].fecha}
+              </li>
+            </ul>
+            <p>{data[7].descr}</p>
+            <a href="/posts/8" class="btn btn-outline-primary">Leer mas →</a>
+          </div>
+        </article>
+      </div>
+      <aside class="col-lg-4 sidebar-home">
+       
+        <!-- categories -->
+        <div class="widget widget-categories">
+          <h4 class="widget-title"><span>Categorias</span></h4>
+          <ul class="list-unstyled widget-list">
+            <!-- <li>
+              <a href="/Fechas" class="d-flex"
+                >Fechas Academicas <small class="ml-auto"></small>
+              </a>
+            </li> -->
+            <li>
+              <a href="/Academico" class="d-flex"
+                >Academico <small class="ml-auto"></small>
+              </a>
+            </li>
+            <li>
+              <a href="/Cientifico" class="d-flex"
+                >Cientifico <small class="ml-auto"></small>
+              </a>
+            </li>
+            <li>
+              <a href="/Deportes" class="d-flex"
+                >Deportes <small class="ml-auto"></small>
+              </a>
+            </li>
+            <li>
+              <a href="/Cultural" class="d-flex"
+                >Cultural <small class="ml-auto"></small>
+              </a>
+            </li>
+            <li>
+              <a href="/Social" class="d-flex"
+                >Social <small class="ml-auto"></small>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- recent post -->
+        <div class="widget">
+          <h4 class="widget-title">Lo mas nuevo</h4>
+
+          <!-- post-item -->
+          <article class="widget-card">
+            <div class="d-flex">
+              <img class="card-img-sm" src={data[8].img} />
+              <div class="ml-3">
+                <h5>
+                  <a class="post-title" href="/posts/9"
+                    >{data[8].title}</a>
+                </h5>
+                <ul class="card-meta list-inline mb-0">
+                  <li class="list-inline-item mb-0">
+                    <i class="ti-calendar"></i>{data[8].fecha}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="widget-card">
+            <div class="d-flex">
+              <img class="card-img-sm" src={data[9].img} />
+              <div class="ml-3">
+                <h5>
+                  <a class="post-title" href="/posts/10"
+                    >{data[9].title}</a>
+                </h5>
+                <ul class="card-meta list-inline mb-0">
+                  <li class="list-inline-item mb-0">
+                    <i class="ti-calendar"></i>{data[9].fecha}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="widget-card">
+            <div class="d-flex">
+              <img class="card-img-sm" src={data[10].img} />
+              <div class="ml-3">
+                <h5>
+                  <a class="post-title" href="/posts/11"
+                    >{data[10].title}</a>
+                </h5>
+                <ul class="card-meta list-inline mb-0">
+                  <li class="list-inline-item mb-0">
+                    <i class="ti-calendar"></i>{data[10].fecha}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Social -->
+        <div class="widget">
+          <h4 class="widget-title"><span>Redes Sociales</span></h4>
+          <ul class="list-inline widget-social">
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/unahvalledesula"><i class="ti-facebook"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://twitter.com/UNAHoficial?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="ti-twitter-alt"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.instagram.com/unahvs_oficial/"><i class="ti-instagram"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/c/UNAHOficial/videos"><i class="ti-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

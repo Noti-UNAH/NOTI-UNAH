@@ -1,0 +1,77 @@
+<form role="form" id="editNuevo" >
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3>Apartado Nuevo</h3>
+          <select
+            class="form-control"
+            aria-label=".form-select"
+            name="nuevoID"
+            id="nuevoID"
+            style="width:100%; "
+          >
+            <option value="">Seleccione la noticia</option>
+          </select>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="titulo">Nuevo Titulo</label>
+              <input
+                type="text"
+                class="form-control"
+                id="editTituloNuevo"
+                placeholder="Titulo"
+                required
+              />
+            </div>
+            <div class="form-group col-md-12">
+              <label for="descripcion">Nueva Descripcion</label>
+              <textarea
+                class="form-control"
+                id="editDescripcionNueva"
+                rows="4"
+                placeholder="Descripcion"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="noticia">Nueva Noticia</label>
+            <textarea
+              class="form-control"
+              id="editNoticiaNueva"
+              rows="20"
+              placeholder="Noticia"
+              required></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="img">Nueva imagen</label>
+              <input
+                type="text"
+                class="form-control"
+                id="editImgNueva"
+                placeholder="url img"
+                required
+              />
+            </div>
+            <div class="form-group col-md-4">
+              <label for="fecha">Nueva Fecha</label>
+              <input
+                type="date"
+                class="form-control"
+                id="editFechaNueva"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" id="editar" class="btn btn-success"
+            ><i class="fas fa-pen"></i> Editar</button
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

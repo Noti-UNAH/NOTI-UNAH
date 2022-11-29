@@ -1,0 +1,110 @@
+---
+import FormNuevo from "./FormNuevo.astro";
+import FormTendencia from "./FormTendencia.astro";
+import FormPopular from "./FormPopular.astro";
+---
+
+<section class="d-flex justify-content-between">
+  <div class="row content">
+    <div class="col-12">
+      <FormNuevo />
+    </div>
+    <div class="col-12 mt-4">
+      <FormTendencia />
+    </div>
+    <div class="col-12 mt-4">
+      <FormPopular />
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  let nuevoID = document.getElementById("nuevoID");
+  let tendenciaID = document.getElementById("tendenciaID");
+  let popularID = document.getElementById("popularID");
+  fetch("http://127.0.0.1:8000/", {
+    method: "GET",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      Accept: "application/json",
+      "Content-Type": "Application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      let option = document.createElement("option");
+      option.value = data[0].id;
+      option.text = data[0].title;
+      nuevoID.appendChild(option);
+      for (let i = 1; i < 4; i++) {
+        let option2 = document.createElement("option");
+        option2.value = data[i].id;
+        option2.text = data[i].title;
+        tendenciaID.appendChild(option2);        
+      }
+      let option3 = document.createElement("option");
+      option3.value = data[4].id;
+      option3.text = data[4].title;
+      popularID.appendChild(option3);
+    });
+
+  document.getElementById("editNuevo").addEventListener("submit", (e) => {
+    e.preventDefault();
+    let editNoticias = {
+      title: document.getElementById("editTituloNuevo").value,
+      descr: document.getElementById("editDescripcionNueva").value,
+      cuerpo: document.getElementById("editNoticiaNueva").value,
+      img: document.getElementById("editImgNueva").value,
+      fecha: document.getElementById("editFechaNueva").value,
+    };
+    fetch("http://127.0.0.1:8000/" + nuevoID.value, {
+      method: "PUT",
+      body: JSON.stringify(editNoticias),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+    document.getElementById("editNuevo").reset();
+    location.reload();
+  });
+
+  document.getElementById("editTendencia").addEventListener("submit", (e) => {
+    e.preventDefault();
+    let editNoticiasTendencia = {
+      title: document.getElementById("editTituloTendencia").value,
+      descr: document.getElementById("editDescripcionTendencia").value,
+      cuerpo: document.getElementById("editNoticiaTendencia").value,
+      img: document.getElementById("editImgTendencia").value,
+      fecha: document.getElementById("editFechaTendencia").value,
+    };
+    fetch("http://127.0.0.1:8000/" + tendenciaID.value, {
+      method: "PUT",
+      body: JSON.stringify(editNoticiasTendencia),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+    document.getElementById("editTendencia").reset();
+    location.reload();
+  });
+
+  document.getElementById("editPopular").addEventListener("submit", (e) => {
+    e.preventDefault();
+    let editNoticiasPopular = {
+      title: document.getElementById("editTituloPopular").value,
+      descr: document.getElementById("editDescripcionPopular").value,
+      cuerpo: document.getElementById("editNoticiaPopular").value,
+      img: document.getElementById("editImgPopular").value,
+      fecha: document.getElementById("editFechaPopular").value,
+    };
+    fetch("http://127.0.0.1:8000/" + popularID.value, {
+      method: "PUT",
+      body: JSON.stringify(editNoticiasPopular),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+    document.getElementById("editPopular").reset();
+    location.reload();
+  });
+</script>

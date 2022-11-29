@@ -1,0 +1,76 @@
+---
+import logo from "../img/logo-unah.png";
+---
+
+<style>
+  section{
+    background-image: url("src/img/fondo.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  a:link, a:visited, a:active {
+    text-decoration:none;
+}
+</style>
+
+<section class="vh-100" >
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img src="https://scontent.xx.fbcdn.net/v/t1.18169-9/398784_421417497872031_814765661_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=174925&_nc_eui2=AeFK8KPkZfdLi_3TGQMrSUT-YXHAYwl6hqJhccBjCXqGotqHlxxB98Pg404oQ2Ev_YD3eHoMO4EE60sMrJjlaRYa&_nc_ohc=haY4Ygbzo1cAX-3EF5F&_nc_ht=scontent.xx&oh=00_AfD6y1b8tZDZYjJKmJ1o6brSs8EfalZo5lkGXDjmosQ9FQ&oe=639244E8"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                  <form>
+  
+                    <!-- <div class="d-flex align-items-center mb-3 pb-1">
+                      <img src={logo} width="200px">
+                    </div> -->
+  
+                    <div class="text-center">
+
+                      <a href="/"><h2 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">NOTI-UNAH</h2></a>
+                    </div>
+
+                    <div class="alert alert-danger" role="alert" id="alerta">
+                      <i class="fa-solid fa-triangle-exclamation"></i> Correo o Contraseña icnorrecta, intente de nuevo
+                    </div>
+                    <div class="form-outline mb-4">
+                      <label class="visually-hidden" for="correo">Correo</label>
+                      <div class="input-group">
+                        <div class="input-group-text"><i class="fa-solid fa-user"></i></div>
+                        <input type="text" class="form-control" id="correo" placeholder="Ingrese su correo">
+                      </div>
+                    </div>
+  
+                    <div class="form-outline mb-4">
+                      <label class="visually-hidden" for="contraseña">Contraseña</label>
+                      <div class="input-group">
+                        <div class="input-group-text"><i class="fa-solid fa-key"></i></div>
+                        <input type="password" class="form-control" id="contraseña" placeholder="Ingrese su contraseña">
+                      </div>
+                    </div>
+  
+                    <div class="pt-1 mb-4">
+                      <button class="btn btn-dark btn-lg btn-block" id="login" type="button">Ingresar</button>
+                    </div>
+  
+                    <!-- <a class="small text-muted" href="#!">¿Olvido su contraseña?</a>
+                    <a href="#!" class="small text-muted">Terms of use.</a>
+                    <a href="#!" class="small text-muted">Privacy policy</a> -->
+                  </form>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
