@@ -1,14 +1,19 @@
 ---
+ //Pagina de Noticias Categoria Academico
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import BannerExtra from "../components/BannerExtra.astro";
 import SectionAcademico from "../components/SectionAcademico.astro";
+//Se importa la Plantilla a usar y los componentes que conformaran la pagina
+// los guiones bajo (-) dividen el apartado de astro para los import
 ---
-
+<!-- Se hace uso de los elementos-->
+<!-- Plantilla que recibe un valor tipo texto porque asi fue declarado en tu archivo-->
 <Layout title="Academico">
   <Header />
   <BannerExtra title="Academico" descripcion="Todas las noticias del ambito academico"/>
+  	<!-- bannerExtra recibe un titulo y descripcion tipo texto-->
   <SectionAcademico/>
   <Footer />
 </Layout>
