@@ -1,15 +1,20 @@
 ---
+//Pagina de Noticias Categoria de Deportes
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import BannerExtra from '../components/BannerExtra.astro';
 import Footer from '../components/Footer.astro';
 import SectionDeportes from '../components/SectionDeportes.astro';
-
+//Se importa la Plantilla a usar y los componentes que conformaran la pagina
+//los guiones bajo (-) dividen el apartado de astro para los import
 ---
-
+<!-- Se hace uso de los elementos-->
+<!-- Plantilla que recibe un valor tipo texto porque asi fue declarado en tu archivo-->
 <Layout title="Deportes">
+	<!-- Elementos que conformaran la pagina -->
 	<Header/>
 	<BannerExtra title="Deportes" descripcion="Todas las noticias del ambito deportivo"/>
+	<!-- bannerExtra recibe un titulo y descripcion tipo texto-->
 	<SectionDeportes/>
 	<Footer/>
 </Layout>
