@@ -1,4 +1,5 @@
 ---
+/*Exportar la funcion de interface de los props para utilizarlo como tyscrip las funciones y describir el tipo de dato que son*/
 export interface Props {
   title: string;
   body: string;
@@ -6,7 +7,8 @@ export interface Props {
   href: string;
   fecha: string;
 }
-<!-- Realizamos la declaracion de varibles y con Astro.props es un objeto que hace que las varibles -->
+/*Astro.props permite utilizar variables de manera global las cuales se pueden utilizar en cualquier parte del proyecto, siempre que se importe el archivo donde se guarde esa variable*/
+/*Se esperan variables constantes */
 const { href, title, body, src, fecha } = Astro.props;
 ---
 <!--Tarjeta donde se puede visualizar la informacion de la noticia de forma compacta-->
