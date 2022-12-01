@@ -6,10 +6,10 @@ export interface Props {
   href: string;
   fecha: string;
 }
-
+<!-- Realizamos la declaracion de varibles y con Astro.props es un objeto que hace que las varibles -->
 const { href, title, body, src, fecha } = Astro.props;
 ---
-
+<!--Tarjeta donde se puede visualizar la informacion de la noticia de forma compacta-->
 <div class="card" style="height: 600px;">
   <img class="img-fluid" src={src}  />
   <div class="card-body">
@@ -18,6 +18,8 @@ const { href, title, body, src, fecha } = Astro.props;
     <p class="card-text">{body}</p>
   </div>
   <div class="card-footer">
+
+    <!--Parte de la tarjeta que permite ver la noticia completa -->
     <a href={href} class="btn btn-primary stretched-link">Leer mas →</a>
   </div>
 </div>
