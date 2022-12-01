@@ -1,10 +1,13 @@
 ---
+//Pagina para el apartado de Login
 import SectionLogin from '../components/SectionLogin.astro';
 import LayoutLogin from '../layouts/LayoutLogin.astro';
+// Se importan los elementos a utilizar desde el Layout (plantilla) hasta los componentes
 ---
 
-
+<!-- Se hace uso del layout y se le otorga dato tipo cadena de texto porque asi fue declrarado en su archivo-->
 <LayoutLogin title="NOTI-UNAH.">
-	<!-- <Header/> -->
+	<!-- <Header/> --> 
+<!--Se hace uso de los componentes importados-->
     <SectionLogin/>
 </LayoutLogin>
