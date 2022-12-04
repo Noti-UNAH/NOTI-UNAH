@@ -1,8 +1,10 @@
 ---
+ //Se importa la Plantilla a usar y los componentes que conformaran la pagina
+// los guiones bajo (-) dividen el apartado de astro para los import
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-
+//Se realiza la conexion con la API para obtener la informacion
 export async function getStaticPaths() {
   const data = await fetch("http://127.0.0.1:8000/").then(
     (response) => response.json()
@@ -15,7 +17,7 @@ export async function getStaticPaths() {
     };
   });
 }
-
+//Se declara la variable post. para darle los elementos necesarios para las noticias
 const { post } = Astro.props;
 ---
 
