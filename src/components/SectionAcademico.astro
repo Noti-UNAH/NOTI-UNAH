@@ -1,4 +1,5 @@
 ---
+  //peticion a la API
 const response = await fetch("http://127.0.0.1:8000/");
 const data = await response.json();
 ---
@@ -20,6 +21,8 @@ const data = await response.json();
             <i class="ti-calendar"></i> {data[11].fecha}
             <br>
             {data[11].descr}
+              <!-- Se recogen los datos de  la API en este caso descripcion-->
+
           </p>
           <a href="/posts/12" class="btn btn-outline-primary">Leer mas →</a>
         </div>
