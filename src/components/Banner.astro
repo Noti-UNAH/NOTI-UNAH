@@ -3,9 +3,9 @@ export interface Props {
 	title: string;
   descripcion: string;
 }
-
+//Se declara los elementos titulo y descripción que variaran segun donde se importe  el componente
 const { title,descripcion } = Astro.props;
-
+//Se realiza la conexión a la API
 const response = await fetch("http://127.0.0.1:8000/");
 const data = await response.json();
 ---
@@ -14,6 +14,7 @@ const data = await response.json();
       <div class="row">
         <div class="col-lg-9 mx-auto">
           <h1 class="mb-5">{title} <br> {descripcion}</h1>
+		<!-- Se hace uso del titulo y descripcion segun lo que se le agregara en la elaboracion de la apgina que lo use-->
           <ul class="list-inline widget-list-inline">
             <li class="list-inline-item"><a href="/posts/15">Torneo</a></li>
             <li class="list-inline-item"><a href="/posts/16">Caminata</a></li>
@@ -35,7 +36,7 @@ const data = await response.json();
       </div>
     </div>
   
-    
+    <!-- Pequeños detalles de diseño -->
     <svg class="banner-shape-1" width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0.965848 20.6397L0.943848 38.3906L18.6947 38.4126L18.7167 20.6617L0.965848 20.6397Z" stroke="#040306"
         stroke-miterlimit="10" />
